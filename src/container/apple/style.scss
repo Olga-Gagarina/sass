@@ -1,0 +1,219 @@
+@use '../../lib/service.scss' as s;
+
+.header {
+    @extend .section;
+    background-color: s.color('backgroundHeader');
+}
+.header__bottom {
+    @extend .section;
+    background-color: s.color('backgroundBottom');
+}
+.header_content {
+    @extend .section_content;
+    display: flex;
+    padding: s.space(4) 0;
+    justify-content: space-between;
+
+  
+   
+}
+.header_block{
+    display: flex;
+    gap: s.space(8);
+    align-items: center;
+   
+}
+
+.header_ad{
+    display: flex;
+    gap: s.space(2);
+    align-items: center;
+   
+}
+.header_icon{
+   @include s.click; 
+}
+ .header_link {
+    color: s.color('whiteLight');
+  
+    @include s.click;
+    display: flex;
+    align-items: center;
+    font-size: s.size('Small');
+ }
+ .header_add {
+  
+    @include s.click;
+    display: flex;
+    align-items: center;
+    font-size: s.size('small');
+    @include s.linkAction;
+ }
+ .header_title {
+    color: s.color('fontDark');
+    display: flex;
+    align-items: center;
+    font-size: s.size('Small');
+    line-height: 21px;
+    font-weight: 400;
+ }
+
+
+ .product_content{
+    display: grid;
+    gap: s.space(5);
+    text-align: center;
+    align-content: center;
+ }
+ .product_title{
+    font-size: s.size('bigest');
+    font-weight: bold;
+    color: s.color(' background');
+ }
+ .product_titleS {
+font-size: s.size('big');
+font-weight: bold;
+
+
+ }
+
+ .product_description{
+    font-size: 28px;
+    font-weight: 400;
+ }
+ .product_description--small{
+    font-size: s.size('medium');
+    font-weight: 400;
+ }
+ .product_action{
+    display: flex;
+    align-items: center;
+    gap: s.space(5);
+    justify-content: center;
+    @include s.click;
+
+ }
+ .product_link{
+    @include s.linkAction;
+   
+ }
+ .product--big {
+   max-height: 700px;
+   height: 100vh;
+   background-size: cover;
+ 
+  
+   @media all and (width < s.screen('tablet')) {
+      background-size: 150%;
+      max-height: 500px;
+   }
+
+ }
+ .product--small{
+   min-height: 580px;
+   height: 100vh;
+   background-size: cover;
+     
+   @media all and (width < s.screen('tablet')) {
+      background-size: 150%;
+      max-height: 500px;
+   }
+ }
+ .product {
+   @extend .section;
+    padding: s.space(20) 0 ;
+    background-repeat: no-repeat;
+    background-position: bottom center;
+ }
+
+ $productImage:(
+ 'iphone-pro''/img/iphone-pro.png',
+ 'iphone' '/img/iphone.png',
+ 'iwatch' '/img/watch.png',
+ 'trade_in' '/img/trade_in.png' #C9C9C9,
+ 'conference' '/img/www.png',
+ 'ipad ' '/img/ipad.png'#fbfbfb,
+ 'small_business ' '/img/busines.png',
+ 'gift' '/img/gift.png',
+ 'card' '/img/card.png',
+ );
+ @each $class, $url in $productImage {
+   .product--#{$class}  {
+      background-image: url(#{$url}) ;
+   }
+ }
+
+//  .product--iphone-pro{
+//    background-image: url('/img/iphone-pro.png');
+// }
+      
+//  .product--iphone{
+//    background-image: url('/img/iphone.png');
+ 
+ 
+//  }
+// .product--iwatch {
+//    background-image: url('/img/watch.png');
+
+ 
+// }
+// .product--trade_in{
+//    background-image: url('/img/trade_in.png');
+  
+// }
+
+// .product--conference{
+//    background-image: url('/img/www.png');
+ 
+ 
+// }
+.product--dark{
+  .product_title, .product_description, .product_description--small {
+   color: s.color('background');
+   background-color: #000;  
+
+  }
+}
+.product--light{
+   .product_title, .product_description {
+    color: s.color('fontDark');
+   }
+ }
+ .product--bottom {
+.product_content {
+   align-content: flex-end;
+}
+ }
+ .product--top {
+.product_content {
+   align-content: flex-start;
+}
+ }
+ footer{
+   background-color: s.color('background');
+ }
+ .footer_block{
+   display: flex;
+   direction: ltr;
+   align-items: flex-start;
+   justify-content: space-between;
+   padding: s.space(10) 0;
+   gap: s.space(5);
+ }
+ .footer_section{
+   display: flex;
+   flex-direction: column;
+   gap: s.space(3);
+ }
+ .footer__title{
+   font-size: s.size('small');
+   font-weight: bold;
+   padding-bottom: s.space(1);
+ }
+ .footer-links{
+
+   font-size: s.size('small');
+   color: s.color('footerLinks');
+ 
+
+ }

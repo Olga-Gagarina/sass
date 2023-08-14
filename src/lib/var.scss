@@ -1,0 +1,42 @@
+$colorMap: (
+    background: #F5F5F7,
+    backgroundDark:#1E1E1E,
+  whiteLight: rgba(255, 255, 255, 0.8),
+  backgroundHeader: #454545 ,
+  backgroundBottom: #fff,
+  colorLink:#06C,
+  navLink: #2997FF,
+  fontDark: #1D1D1F,
+  footerLinks: #424245,
+ 
+);
+
+ @function color ($key) {
+    @return map-get($colorMap , $key );
+ }
+
+
+ $sizeMap: (
+  default: 16px,
+  small: 12px,
+  Small: 14px,
+  big: 40px,
+  bigest: 56px,
+  medium:20px,
+);
+
+ @function size ($key: 'default') {
+    @return map-get($sizeMap , $key );
+ }
+ $screenMap: (
+   desktop: 1440px,
+   laptop: 1260px,
+   tablet: 1000px,
+   mobila: 620px,
+ ); 
+
+ @function screen ($key: 'default') {
+   @return map-get($screenMap , $key);
+}
+
+
